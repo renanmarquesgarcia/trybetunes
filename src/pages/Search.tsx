@@ -45,8 +45,12 @@ function Search({ saveAlbums, albums }: SearchProps) {
             </button>
           </form>
         )}
+      {
+        Array.isArray(albums) && albums.length === 0
+        && <h1>Nenhum álbum foi encontrado</h1>
+      }
       { Array.isArray(albums) && albums.length > 0
-        ? (
+        && (
           <section>
             <h2>{`Resultado de álbuns de: ${albums[0].artistName}`}</h2>
             {albums?.map((album) => (
@@ -60,8 +64,7 @@ function Search({ saveAlbums, albums }: SearchProps) {
               />
             ))}
           </section>
-        )
-        : <h1>Nenhum álbum foi encontrado</h1>}
+        )}
     </>
   );
 }
