@@ -25,7 +25,7 @@ function Album() {
   return (
     <section>
       { loading && <Loading /> }
-      { musics!.length > 0 && (
+      { Array.isArray(musics) && (
         <>
           <div>
             <img src={ musics![0].artworkUrl100 } alt="capa do albúm" />
@@ -33,7 +33,7 @@ function Album() {
             <span data-testid="artist-name">{musics![0].artistName}</span>
           </div>
           <div>
-            { musics?.slice(1).map(({ trackId, trackName, previewUrl}) => (
+            { musics?.slice(1).map(({ trackId, trackName, previewUrl }) => (
               <MusicCard
                 key={ trackId }
                 trackName={ trackName }
