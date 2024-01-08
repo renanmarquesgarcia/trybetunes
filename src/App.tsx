@@ -4,6 +4,7 @@ import Login from './pages/Login';
 import Search from './pages/Search';
 import { AlbumType } from './types';
 import Album from './pages/Album';
+import Layout from './components/Layout';
 
 function App() {
   const [albums, setAlbums] = useState<AlbumType[] | [] | null>(null);
@@ -15,11 +16,13 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={ <Login /> } />
-      <Route
-        path="/search"
-        element={ <Search saveAlbums={ saveAlbums } albums={ albums } /> }
-      />
-      <Route path="album/:id" element={ <Album /> } />
+      <Route element={ <Layout /> }>
+        <Route
+          path="/search"
+          element={ <Search saveAlbums={ saveAlbums } albums={ albums } /> }
+        />
+        <Route path="album/:id" element={ <Album /> } />
+      </Route>
     </Routes>
   );
 }
