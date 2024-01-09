@@ -7,6 +7,8 @@ import Album from './pages/Album';
 import Layout from './components/Layout';
 import Favorites from './pages/Favorites';
 import NotFound from './pages/NotFound';
+import Profile from './pages/Profile';
+import ProfileEdit from './pages/ProfileEdit';
 
 function App() {
   const [albums, setAlbums] = useState<AlbumType[] | [] | null>(null);
@@ -25,6 +27,8 @@ function App() {
         />
         <Route path="/album/:id" element={ <Album /> } />
         <Route path="/favorites" element={ <Favorites /> } />
+        <Route path="/profile" element={ <Profile /> } />
+        <Route path="/profile/edit" element={ <ProfileEdit /> } />
       </Route>
       <Route path="/*" element={ <NotFound /> } />
     </Routes>
