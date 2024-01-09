@@ -1,10 +1,12 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import checkedHeart from '../images/checked_heart.png';
 import emptyHeart from '../images/empty_heart.png';
 import { SongType } from '../types';
 import { addSong, removeSong } from '../services/favoriteSongsAPI';
 
-function MusicCard({ trackId, trackName, previewUrl }: SongType) {
+type MusicCardProps = SongType & { favorite: boolean };
+
+function MusicCard({ trackId, trackName, previewUrl, favorite }: MusicCardProps) {
   const [isFavorite, setIsFavorite] = useState(false);
 
   const handleClickIsFavorite = async (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -15,6 +17,10 @@ function MusicCard({ trackId, trackName, previewUrl }: SongType) {
       await removeSong({ trackId, trackName, previewUrl });
     }
   };
+
+  useEffect(() => {
+    if (favorite) setIsFavorite(true);
+  }, []);
 
   return (
     <div>

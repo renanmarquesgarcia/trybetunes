@@ -4,10 +4,12 @@ import { AlbumType, SongType } from '../types';
 import getMusics from '../services/musicsAPI';
 import Loading from '../components/Loading';
 import MusicCard from '../components/MusicCard';
+import { getFavoriteSongs } from '../services/favoriteSongsAPI';
 
 function Album() {
   const [musics, setMusics] = useState<SongType[] | null>(null);
   const [album, setAlbum] = useState<AlbumType | null>(null);
+  const [favorites, setFavorites] = useState<SongType[]>();
 
   const [loading, setLoading] = useState(true);
 
@@ -16,10 +18,12 @@ function Album() {
   useEffect(() => {
     async function fetchMusics() {
       if (id) {
+        const favSongs = await getFavoriteSongs();
+        setFavorites(favSongs);
         const results = await getMusics(id);
-        const teste = results.slice(1) as unknown as SongType[];
+        const songs = results.slice(1) as unknown as SongType[];
         setAlbum(results[0]);
-        setMusics(teste);
+        setMusics(songs);
       }
     }
 
@@ -44,6 +48,7 @@ function Album() {
                 trackName={ trackName }
                 previewUrl={ previewUrl }
                 trackId={ trackId }
+                favorite={ favorites!.some((fav) => fav.trackId === trackId) }
               />
             ))}
           </div>
