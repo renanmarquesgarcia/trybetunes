@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { getFavoriteSongs } from '../services/favoriteSongsAPI';
 import { SongType } from '../types';
-import Loading from '../components/Loading';
+import Loading from '../components/loading/Loading';
 import MusicCard from '../components/MusicCard';
 
 function Favorites() {

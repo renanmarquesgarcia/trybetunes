@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import searchAlbumsAPI from '../services/searchAlbumsAPI';
-import Loading from '../components/Loading';
+import Loading from '../components/loading/Loading';
 import { AlbumType } from '../types';
 import AlbumCard from '../components/AlbumCard';
 

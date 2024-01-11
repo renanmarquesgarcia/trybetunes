@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { getUser } from '../services/userAPI';
-import Loading from '../components/Loading';
+import Loading from '../components/loading/Loading';
 
 function Profile() {
   const [name, setName] = useState('');

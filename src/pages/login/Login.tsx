@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { createUser } from '../../services/userAPI';
-import Loading from '../../components/Loading';
+import Loading from '../../components/loading/Loading';
 import trybeTunesLogo from '../../images/trybe_tunes_logo.png';
 import './Login.css';
 

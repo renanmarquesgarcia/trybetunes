@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { AlbumType, SongType } from '../types';
 import getMusics from '../services/musicsAPI';
-import Loading from '../components/Loading';
+import Loading from '../components/loading/Loading';
 import MusicCard from '../components/MusicCard';
 import { getFavoriteSongs } from '../services/favoriteSongsAPI';
 
