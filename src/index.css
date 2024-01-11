@@ -17,3 +17,7 @@ code {
   display: flex;
   justify-content: center;
 }
+
+body {
+  background: linear-gradient(124deg, #003BE5 12.08%, #00D5E2 86.52%);
+}

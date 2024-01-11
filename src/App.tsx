@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 import { useState } from 'react';
-import Login from './pages/Login';
+import Login from './pages/login/Login';
 import Search from './pages/Search';
 import { AlbumType } from './types';
 import Album from './pages/Album';
