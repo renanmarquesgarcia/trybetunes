@@ -1,10 +1,3 @@
-#root {
-  align-items: center;
-  display: flex;
-  height: 100vh;
-  justify-content: center;
-}
-
 .form__login__container {
   align-items: center;
   background: white;
@@ -14,6 +7,10 @@
   flex-direction: column;
   height: 350px;
   justify-content: center;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
   width: 40%;
 }
 

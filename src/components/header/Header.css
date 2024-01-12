@@ -1,0 +1,50 @@
+.header__container {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  height: 100vh;
+  justify-content: space-around;
+
+  /* position: fixed; */
+  width: 20%;
+}
+
+.header__trybe__tunes__logo {
+  align-self: center;
+  width: 70%;
+}
+
+.header__nav__links {
+  align-self: center;
+}
+
+.nav__links {
+  display: flex;
+  flex-shrink: 1;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.nav__links a {
+  color: #444955;
+  text-decoration: none;
+}
+
+.nav__links a.active {
+  font-weight: 700;
+}
+
+.header__user__info {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.header__profile__picture {
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+}
