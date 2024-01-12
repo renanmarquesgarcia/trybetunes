@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import { useState } from 'react';
 import Login from './pages/login/Login';
-import Search from './pages/Search';
+import Search from './pages/search/Search';
 import { AlbumType } from './types';
 import Album from './pages/Album';
 import Layout from './components/Layout/Layout';

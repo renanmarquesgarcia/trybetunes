@@ -1,8 +1,9 @@
 import { useState } from 'react';
-import searchAlbumsAPI from '../services/searchAlbumsAPI';
-import Loading from '../components/loading/Loading';
-import { AlbumType } from '../types';
-import AlbumCard from '../components/AlbumCard';
+import searchAlbumsAPI from '../../services/searchAlbumsAPI';
+import Loading from '../../components/loading/Loading';
+import { AlbumType } from '../../types';
+import AlbumCard from '../../components/AlbumCard';
+import './Search.css';
 
 type SearchProps = {
   saveAlbums: (content: AlbumType[] | []) => void,
@@ -25,23 +26,26 @@ function Search({ saveAlbums, albums }: SearchProps) {
   };
 
   return (
-    <>
+    <section className="search__page__container">
       { loading
         ? <Loading />
         : (
-          <form>
+          <form className="search__form__container">
             <input
               type="text"
               data-testid="search-artist-input"
+              className="search__artist__input"
+              placeholder="DIGITE A SUA PESQUISA"
               value={ artist }
               onChange={ ({ target }) => setArtist(target.value) }
             />
             <button
               data-testid="search-artist-button"
+              className="search__btn"
               disabled={ isDisabled }
               onClick={ (e) => handleSubmit(e) }
             >
-              Procurar
+              PROCURAR
             </button>
           </form>
         )}
@@ -65,7 +69,7 @@ function Search({ saveAlbums, albums }: SearchProps) {
             ))}
           </section>
         )}
-    </>
+    </section>
   );
 }
 
