@@ -40,3 +40,43 @@
   font-weight: 700;
   padding: 10px;
 }
+
+.albums__container {
+  align-items: center;
+  background-color: #eff3f9;
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+}
+
+.album__not__found__container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 67vh;
+  justify-content: center;
+}
+
+.circle__error__icon {
+  width: 70px;
+}
+
+.album__not__found {
+  color: #96989c;
+  font-size: 30px;
+}
+
+.albums__from__text {
+  color: #003be5;
+  font-size: 25px;
+  font-style: italic;
+  font-weight: 400;
+  text-align: center;
+}
+
+.albums__list__container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: center;
+}
