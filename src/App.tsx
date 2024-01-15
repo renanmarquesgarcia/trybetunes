@@ -3,7 +3,7 @@ import { useState } from 'react';
 import Login from './pages/login/Login';
 import Search from './pages/search/Search';
 import { AlbumType } from './types';
-import Album from './pages/Album';
+import Album from './pages/album/Album';
 import Layout from './components/Layout/Layout';
 import Favorites from './pages/Favorites';
 import NotFound from './pages/NotFound';

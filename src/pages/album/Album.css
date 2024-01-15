@@ -1,0 +1,35 @@
+.album__page__container {
+  width: 80%;
+}
+
+.album__music__card__container {
+  background-color: #eff3f9;
+  margin-top: 187px;
+  position: relative;
+}
+
+.album__info {
+  display: flex;
+  gap: 30px;
+  line-height: 0;
+  position: absolute;
+  transform: translate(77px, -50%);
+  z-index: 1;
+}
+
+.album__cover__image {
+  border-radius: 12px;
+  width: 200px;
+}
+
+.album__name__artist__name {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 20px;
+}
+
+.music__card__container {
+  text-align: center;
+}

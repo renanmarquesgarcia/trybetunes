@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
-import checkedHeart from '../images/checked_heart.png';
-import emptyHeart from '../images/empty_heart.png';
-import { SongType } from '../types';
-import { addSong, removeSong } from '../services/favoriteSongsAPI';
+import checkedHeart from '../../images/checked_heart.png';
+import emptyHeart from '../../images/empty_heart.png';
+import { SongType } from '../../types';
+import { addSong, removeSong } from '../../services/favoriteSongsAPI';
+import './MusicCard.css';
 
 type MusicCardProps = SongType & { favorite: boolean };
 
@@ -23,9 +24,13 @@ function MusicCard({ trackId, trackName, previewUrl, favorite }: MusicCardProps)
   }, []);
 
   return (
-    <div>
+    <div className="music__card">
       <span>{trackName}</span>
-      <audio data-testid="audio-component" src={ previewUrl } controls>
+      <audio
+        data-testid="audio-component"
+        src={ previewUrl }
+        controls
+      >
         <track kind="captions" />
         O seu navegador não suporta o elemento
         {' '}
@@ -37,10 +42,11 @@ function MusicCard({ trackId, trackName, previewUrl, favorite }: MusicCardProps)
         data-testid={ `checkbox-music-${trackId}` }
       >
         { isFavorite
-          ? <img src={ checkedHeart } alt="favorite" />
-          : <img src={ emptyHeart } alt="favorite" /> }
+          ? <img src={ checkedHeart } alt="favorite" className="heart__icons" />
+          : <img src={ emptyHeart } alt="favorite" className="heart__icons" /> }
         <input
           type="checkbox"
+          className="music__card__checkbox"
           id={ `favorite-${trackId}` }
           onChange={ (e) => handleClickIsFavorite(e) }
           checked={ isFavorite }

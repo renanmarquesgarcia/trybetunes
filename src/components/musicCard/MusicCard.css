@@ -1,0 +1,19 @@
+.music__card {
+  align-items: center;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin: 30px;
+}
+
+audio::-webkit-media-controls-panel {
+  background-color: white;
+}
+
+.heart__icons {
+  cursor: pointer;
+}
+
+.music__card__checkbox {
+  display: none;
+}

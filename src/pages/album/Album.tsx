@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { AlbumType, SongType } from '../types';
-import getMusics from '../services/musicsAPI';
-import Loading from '../components/loading/Loading';
-import MusicCard from '../components/MusicCard';
-import { getFavoriteSongs } from '../services/favoriteSongsAPI';
+import { AlbumType, SongType } from '../../types';
+import getMusics from '../../services/musicsAPI';
+import Loading from '../../components/loading/Loading';
+import MusicCard from '../../components/musicCard/MusicCard';
+import { getFavoriteSongs } from '../../services/favoriteSongsAPI';
+import './Album.css';
 
 function Album() {
   const [musics, setMusics] = useState<SongType[] | null>(null);
@@ -32,16 +33,22 @@ function Album() {
   }, []);
 
   return (
-    <section>
+    <section className="album__page__container">
       { loading && <Loading /> }
       { Array.isArray(musics) && (
-        <>
-          <div>
-            <img src={ album!.artworkUrl100 } alt="capa do albúm" />
-            <h3 data-testid="album-name">{album!.collectionName}</h3>
-            <span data-testid="artist-name">{album!.artistName}</span>
+        <section className="album__music__card__container">
+          <div className="album__info">
+            <img
+              src={ album!.artworkUrl100 }
+              alt="capa do albúm"
+              className="album__cover__image"
+            />
+            <div className="album__name__artist__name">
+              <h3 data-testid="album-name">{album!.collectionName}</h3>
+              <span data-testid="artist-name">{album!.artistName}</span>
+            </div>
           </div>
-          <div>
+          <section className="music__card__container">
             { musics.map(({ trackId, trackName, previewUrl }) => (
               <MusicCard
                 key={ trackId }
@@ -51,8 +58,8 @@ function Album() {
                 favorite={ favorites!.some((fav) => fav.trackId === trackId) }
               />
             ))}
-          </div>
-        </>
+          </section>
+        </section>
       )}
     </section>
   );
