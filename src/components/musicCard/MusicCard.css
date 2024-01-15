@@ -3,7 +3,11 @@
   display: flex;
   gap: 20px;
   justify-content: center;
-  margin: 30px;
+  margin: 15px;
+}
+
+.music__card:first-child {
+  margin-top: 100px;
 }
 
 audio::-webkit-media-controls-panel {

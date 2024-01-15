@@ -5,7 +5,7 @@ import Search from './pages/search/Search';
 import { AlbumType } from './types';
 import Album from './pages/album/Album';
 import Layout from './components/Layout/Layout';
-import Favorites from './pages/Favorites';
+import Favorites from './pages/favorites/Favorites';
 import NotFound from './pages/NotFound';
 import Profile from './pages/Profile';
 import ProfileEdit from './pages/ProfileEdit';
