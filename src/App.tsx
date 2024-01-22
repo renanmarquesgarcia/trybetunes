@@ -6,7 +6,7 @@ import { AlbumType } from './types';
 import Album from './pages/album/Album';
 import Layout from './components/Layout/Layout';
 import Favorites from './pages/favorites/Favorites';
-import NotFound from './pages/NotFound';
+import NotFound from './pages/notFound/NotFound';
 import Profile from './pages/profile/Profile';
 import ProfileEdit from './pages/profileEdit/ProfileEdit';
 
