@@ -36,7 +36,7 @@ function Album() {
     <section className="album__page__container">
       { loading && <Loading /> }
       { Array.isArray(musics) && (
-        <section className="album__music__card__container">
+        <>
           <div className="album__info">
             <img
               src={ album!.artworkUrl100 }
@@ -59,7 +59,7 @@ function Album() {
               />
             ))}
           </section>
-        </section>
+        </>
       )}
     </section>
   );
