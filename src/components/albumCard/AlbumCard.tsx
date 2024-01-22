@@ -22,7 +22,7 @@ function AlbumCard(
           alt="capa do álbum"
           className="album__card__image"
         />
-        <h3 className="album__card__name">{collectionName}</h3>
+        <h3>{collectionName}</h3>
         <span>{artistName}</span>
       </Link>
     </div>
