@@ -42,7 +42,7 @@ function Profile() {
             </div>
           </section>
           <section className="profile__info">
-            <div className="profile__email">
+            <div>
               <h4>E-mail</h4>
               <span>{email}</span>
             </div>
@@ -50,7 +50,12 @@ function Profile() {
               <h4>Descrição</h4>
               <span>{description}</span>
             </div>
-            <Link to="/profile/edit">Editar perfil</Link>
+            <Link
+              to="/profile/edit"
+              className="link__profile__edit"
+            >
+              Editar perfil
+            </Link>
           </section>
         </section>
       )
