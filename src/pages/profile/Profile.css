@@ -1,0 +1,32 @@
+.profile__container {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+
+.profile__image__name__container {
+  align-items: center;
+  color: white;
+  display: flex;
+  gap: 20px;
+}
+
+.profile__image {
+  align-self: flex-start;
+  border-radius: 170px;
+  box-shadow: -9px 8px 8px 0 rgba(0, 0, 0, 0.2);
+  flex-shrink: 0;
+  height: 170px;
+  margin: 20px 0 20px 70px;
+  width: 170px;
+}
+
+.profile__info {
+  background-color: #eff3f9;
+  height: 100%;
+  padding: 50px 80px;
+}
+
+.profile__email {
+  margin-bottom: 30px;
+}
