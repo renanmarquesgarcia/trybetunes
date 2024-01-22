@@ -8,7 +8,7 @@ import Layout from './components/Layout/Layout';
 import Favorites from './pages/favorites/Favorites';
 import NotFound from './pages/NotFound';
 import Profile from './pages/profile/Profile';
-import ProfileEdit from './pages/ProfileEdit';
+import ProfileEdit from './pages/profileEdit/ProfileEdit';
 
 function App() {
   const [albums, setAlbums] = useState<AlbumType[] | [] | null>(null);

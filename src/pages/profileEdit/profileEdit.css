@@ -1,0 +1,51 @@
+.profile__edit__form {
+  background-color: #eff3f9;
+  height: 100%;
+  margin-top: 177px;
+  padding: 50px 80px;
+  width: 80%;
+}
+
+.profile__edit__form > div {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+  width: 50%;
+}
+
+.profile__edit__form > div > input, textarea {
+  border: none;
+  border-bottom: 1px solid #3d495c;
+  margin-top: 10px;
+  padding: 8px;
+}
+
+.profile__edit__form > div > input, textarea:focus {
+  outline-color: #003be5;
+}
+
+.profile__edit__form > div > textarea {
+  height: 100px;
+  resize: none;
+}
+
+.profile__edit__name__container {
+  display: flex;
+  flex-direction: column;
+}
+
+.edit__profile__save__btn {
+  background: #003be5;
+  border: none;
+  border-radius: 100px;
+  color: white;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 12px 50px;
+}
+
+.edit__profile__save__btn:disabled {
+  background-color: #3d495c;
+  cursor: not-allowed;
+}

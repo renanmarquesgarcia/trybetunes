@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { getUser, updateUser } from '../services/userAPI';
-import Loading from '../components/loading/Loading';
+import { getUser, updateUser } from '../../services/userAPI';
+import Loading from '../../components/loading/Loading';
+import './profileEdit.css';
 
 const EMAIL_REGEX = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
@@ -43,9 +44,11 @@ function ProfileEdit() {
     loading
       ? <Loading />
       : (
-        <form>
-          <label htmlFor="name">
-            Nome
+        <form className="profile__edit__form">
+          <div className="profile__edit__name__container">
+            <label htmlFor="name">
+              Nome
+            </label>
             <input
               data-testid="edit-input-name"
               id="name"
@@ -53,9 +56,11 @@ function ProfileEdit() {
               value={ name }
               onChange={ ({ target }) => setName(target.value) }
             />
-          </label>
-          <label htmlFor="email">
-            Email
+          </div>
+          <div>
+            <label htmlFor="email">
+              Email
+            </label>
             <input
               data-testid="edit-input-email"
               id="email"
@@ -63,19 +68,22 @@ function ProfileEdit() {
               value={ email }
               onChange={ ({ target }) => setEmail(target.value) }
             />
-          </label>
-          <label htmlFor="description">
-            Descrição
-            <input
+          </div>
+          <div>
+            <label htmlFor="description">
+              Descrição
+            </label>
+            <textarea
               data-testid="edit-input-description"
               id="description"
-              type="text"
               value={ description }
               onChange={ ({ target }) => setDescription(target.value) }
             />
-          </label>
-          <label htmlFor="profileImage">
-            Foto do Perfil
+          </div>
+          <div>
+            <label htmlFor="profileImage">
+              Foto do Perfil
+            </label>
             <input
               data-testid="edit-input-image"
               id="profileImage"
@@ -83,9 +91,10 @@ function ProfileEdit() {
               value={ profileImage }
               onChange={ ({ target }) => setProfileImage(target.value) }
             />
-          </label>
+          </div>
           <button
             data-testid="edit-button-save"
+            className="edit__profile__save__btn"
             onClick={ (e) => handleClickSaveNewUserInfo(e) }
             disabled={ isDisabled }
           >
